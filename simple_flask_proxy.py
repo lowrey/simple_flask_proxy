@@ -29,8 +29,9 @@ def catch_all(path):
     resp = make_response(r.content, r.status_code)
     resp.mimetype = r.headers['content-type']
     return resp
+ 
 
-
+# flask uses a non-standard dictionary for headers, so it needs to converted
 def header_to_dict(headers):
     ret = {}
     IGNORE = ['Content-Length', 'Host']
